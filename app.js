@@ -20,7 +20,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/usersold', usersRouter);
+//importing route
+var coreAppRoutes = require('./_coreApplication/routes/index');
+coreAppRoutes(app); //register the core app api
+
+var mobileAppRoutes = require('./_mobileApplication/routes/index');
+mobileAppRoutes(app); //register the mobile app api
+
+var webAppRoutes = require('./_webApplication/routes/index');
+webAppRoutes(app); //register the web app api
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
