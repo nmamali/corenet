@@ -36,6 +36,7 @@ CovidModel.addNewEntrySymptom = function (result, req) {
   breathing =  Math.floor(Math.random() * 11);
   headache =  Math.floor(Math.random() * 11);
 
+
   var sql = "INSERT INTO symptomsEntries (userId, cough, fever, weakness, breathing, headache) VALUES ('"+999+"', '"+cough+"', '"+fever+"', '"+weakness+"', '"+breathing+"', '"+headache+"')";
 
   conn_sql.query(sql , function (err, res) {
