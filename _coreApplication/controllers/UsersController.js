@@ -5,14 +5,14 @@ var UsersModel = require('../model/UsersModel');
 
 //when routed to list all jammie stops x
 exports.list_all_users = function(req, res) {
-  UsersModel.getAllUsers(function(err, users) {
-
-    console.log('controller recived data,  load all users');
+  UsersModel.getAllEntries(function(err, users) {
+    
+    console.log('controller recived data,  load all cases symptoms');
     if (err)
       res.send(err);
-    console.log('res', users);
-    res.send(users);
+    console.log('res', cases);
+    res.send(cases);
   });
 
-  
+
 };
