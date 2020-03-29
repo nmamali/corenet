@@ -9,9 +9,9 @@ exports.list_all_users = function(req, res) {
 
     console.log('controller recived data,  load all users');
     if (err)
-      res.send(err);
+      res.json(err);
     console.log('res', users);
-    res.send(users);
+    res.json(users);
   });
 
 
