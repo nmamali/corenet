@@ -14,5 +14,26 @@ exports.list_all_users = function(req, res) {
     res.json(users);
   });
 
-
 };
+
+exports.add_user = function(req, res) {
+  UsersModel.addNewUserEntry((err, entry)=> {
+
+    console.log('controller recived data,  add new user entry');
+    if (err)
+      res.send(err);
+    console.log('res', entry);
+    res.send(entry);
+  } , req);
+};
+
+exports.update_user = (req,res) =>{
+  UsersModel.updateUser((err,entry)=>{
+    console.log("update UserEntry");
+    if(err) res.send(err)
+    console.log('res',entry);
+    res.send(entry);
+
+  }, req);
+}
+

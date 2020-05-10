@@ -9,5 +9,8 @@ UserRouter.route('/list')
   .get(usersController.list_all_users)
   .post(usersController.list_all_users); //change this to a differrent function
 
+UserRouter.post("/add", usersController.add_user)
+UserRouter.post("/update", usersController.update_user)
+
 
 module.exports = UserRouter;
